@@ -11,7 +11,7 @@
 <form class="statement__form">
     <div class="statement__form__input-item">
     <label class="statement__form__label" for="name">Имя</label>
-        <input class="statement__form__input" name="name" id="name" type="text">
+        <input class="statement__form__input" name="name" id="name" type="text" >
         </div>
         <div class="statement__form__input-item">
     <label for="email" class="statement__form__label">E-Mail</label>
@@ -62,8 +62,8 @@ margin-top: 20px;
     border-radius: 10px;
     padding: 16px;
     margin: 0px auto;
-    margin-top: 36px;
-    box-shadow: -13px -18px 0px 0px rgba(189, 14, 14, 1) ;
+    margin-top: 8vw;
+    box-shadow: -5vw -5vw 0px 0px rgba(189, 14, 14, 1) ;
 }
 .statement__form__input
 {
@@ -79,17 +79,24 @@ margin-left: auto;
     color:rgba(157, 157, 157, 1) ;
     white-space: nowrap;
     font-weight: 700;
-    width: 20%;
+    width: 30%;
     text-align: right;
     padding-right: 10px;
     height: 5vw;
     font-size: 5vw;
 
 }
+.statement__form__input
+{
+    font-size: 20px;
+    color: black;
+    font-weight: 700;
+}
 .statement__form__input-item
 {
     display: flex;
     margin-bottom: 9px;
+
 }
 .statement__form__btn
 {
@@ -121,7 +128,7 @@ margin-left: auto;
     }
     .statement__form__btn
     {
-        padding: 2vw;
+        padding: 2vw 5vw;
     }
 }
 </style>

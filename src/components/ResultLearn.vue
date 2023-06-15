@@ -63,18 +63,20 @@ export default {
 </script>
 <style scoped>
 .result-learn__header{
-    padding: 20px 20px;
+    padding: 4vw;
     border: 2px solid rgb(255, 255, 255);
     border-left: 0px;
     display: block;
-    font-size: 24px;
+    font-size: 4vw;
     font-weight: 900;
     margin-right: 25px;
     position: relative;
+    text-align: end;
+    margin-right: 25vw;
 }
 .result-learn__header::before{
     content: "";
-    width: 5px;
+    width: 3vw;
     height: 20px;
     background-color: black;
     position: absolute;
@@ -89,30 +91,32 @@ export default {
     padding-top: 5px;
     border-bottom: 3px solid white;
     padding-bottom: 20px;
-    max-width: 80vw;
+    max-width: 94vw;
     margin: 0px auto;
 }
 .result-learn-item
 {
     background-color: rgba(157, 157, 157, 1);
-    width: 35vw;
-    height: 35vw;
+    width: 42vw;
+    height: 42vw;
     margin: 2vw;
     position: relative;
+    padding: 5px;
 }
 
 .result-learn-item__header
 {
-  font-size: 4.5vw;
+  font-size: 4.8vw;
     text-align: center;
     padding: 15px 0px 0px 0px;
     color: black;
+    margin-bottom: 5px;
 
 }
 .result-learn-item__text
 {
-  font-size: 2.9vw;
-    padding: 14px;
+  font-size: 3vw;
+    padding: 10px 7px;
     color: black;
 }
 .result-learn-item__header-vertical
@@ -149,8 +153,8 @@ export default {
 @media (min-width: 800px) {
   .result-learn-item
   {
-    width: 22vw;
-    height: 22vw;
+    width: 27vw;
+    height: 27vw;
     background-color: rgba(157, 157, 157, 1) !important;
     transition: background-color 1s ease ;
   }
@@ -168,7 +172,7 @@ export default {
   }
   .result-learn-item__text
 {
-  font-size: 2.5vw;
+  font-size: 2.3vw !important;
 }
 .result-learn-item__header
 {

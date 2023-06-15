@@ -27,7 +27,7 @@ onMounted(() => {
   color: white;
   margin: 0px;
   padding: 0px;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 }
 ul{
   list-style: none;

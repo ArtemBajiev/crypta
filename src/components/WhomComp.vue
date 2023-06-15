@@ -1,3 +1,4 @@
+<!-- eslint-disable vuejs-accessibility/mouse-events-have-key-events -->
 <template>
   <section id="whom">
     <div class="whom">
@@ -35,9 +36,10 @@
 </div>
       </div>
     </div>
+    <div class="parallax-wrap" @mousemove="Parallax" @mouseleave="ParallaxStart">
     <div class="whom-circles">
-      <ul class="circles">
-        <li class="circle-item">
+      <ul class="circles" >
+        <li class="circle-item" value="-2">
             <div class="circle-inside">
                 <h4 class="circle-whow__header">Новички в трейдинге</h4>
             <p class="circle-whow__text">Получите точку входа в трейдинг,
@@ -49,7 +51,7 @@
             </ul>
         </div>
         </li>
-        <li class="circle-item">
+        <li class="circle-item"  value="-1">
             <div class="circle-inside">
                 <h4 class="circle-whow__header">Предприниматели</h4>
             <p class="circle-whow__text">Обретите новый источник дохода,
@@ -61,7 +63,7 @@
             </ul>
         </div>
         </li>
-        <li class="circle-item">
+        <li class="circle-item"  value="2">
             <div class="circle-inside">
                 <h4 class="circle-whow__header">Топ-менеджеры</h4>
             <p class="circle-whow__text">Освойте новую, независимую профессию,
@@ -73,7 +75,7 @@
             </ul>
         </div>
         </li>
-        <li class="circle-item">
+        <li class="circle-item"  value="-3">
             <div class="circle-inside">
                 <h4 class="circle-whow__header">Трейдеры с опытом</h4>
             <p class="circle-whow__text">Отточите свои навыки и знания в трейдинге,
@@ -87,10 +89,32 @@
         </li>
       </ul>
     </div>
+  </div>
   </section>
 </template>
 <script>
-export default {};
+export default {
+  methods: {
+    Parallax(event) {
+      if (window.matchMedia('(min-width: 768px)')) {
+        document.querySelectorAll('.circle-item').forEach((item) => {
+          const position = item.getAttribute('value');
+          const d = document.querySelector('.parallax-wrap');
+          const x = (window.innerWidth - event.pageX * position) / 90;
+          const y = (window.innerWidth - (event.pageY - d.offsetTop) * position) / 90;
+          // eslint-disable-next-line no-param-reassign
+          item.setAttribute('style', `transition: all 0.5s lineral; transform: translate(${x}px, ${y}px);`);
+        });
+      }
+    },
+    ParallaxStart() {
+      document.querySelectorAll('.circle-item').forEach((item) => {
+        // eslint-disable-next-line no-param-reassign
+        item.setAttribute('style', 'transition: all 2s ease-in-out; transform: translate(0px, 0px);');
+      });
+    },
+  },
+};
 </script>
 <style>
 .whom {
@@ -452,6 +476,17 @@ align-items: center;
     }
 }
 @media (min-width: 800px) {
+  .circle-whow {
+
+  animation: none;
+
+}
+.circle-item{
+  animation: none;
+  transform: none;
+  transition: all .2s linear;
+
+}
   .circle{
     transform: scale(2);
     top: 550px;
@@ -474,34 +509,110 @@ align-items: center;
     padding: 0px 40px;
   }
 
-  .circle-item:hover{
-    z-index: 15;
-    cursor: pointer;
-    animation-play-state: paused;
-  }
   .circle-item:nth-child(1)
   {
     margin: 0px;
     margin-top: 0px;
     left: 0px;
+    z-index: 1;
   }
   .circle-item:nth-child(2)
   {
     margin: 0px;
     margin-top: 200px;
     left: 0px;
+    z-index: 2;
   }
   .circle-item:nth-child(3)
   {
     margin: 0px;
     margin-top: 150px;
     right: 0px;
+    z-index: 3;
   }
   .circle-item:nth-child(4)
   {
     margin: 0px;
     margin-top: 350px;
     right: 0px;
+    z-index: 2;
+  }
+  .circle-item__text
+  {
+    display: none;
+  }
+  .circle-inside
+  {
+       display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    top: 0px !important;
+  }
+  .circle-whow__header
+  {
+    font-size: 2.1vw;
+    max-width: none;
+  }
+  .circle-whow__text
+  {
+    font-size: 1.3vw;
+    max-width: 100%;
+    padding: 0px 15%;
+
+  }
+  .circles
+  {
+    padding: 10vw 0px;
+  }
+  .circle-item:nth-child(1)
+  {
+    top: 1vw;
+    left: 6vw;
+  }
+  .circle-item:nth-child(2)
+  {
+    top: 3vw;
+    left:18vw;
+  }
+  .circle-item:nth-child(3)
+  {
+    top: -13vw;
+    left: -25vw;
+
+  }
+  .circle-item:nth-child(4)
+  {
+    top: -15vw;
+    left: -10vw;
+  }
+  .circle-item:nth-child(1) .circle-whow
+  {
+    height: 35vw !important;
+    width: 35vw !important;
+    background-color: white;
+  }
+  .circle-item:nth-child(2) .circle-whow
+  {
+    height: 28vw !important;
+    width: 28vw !important;
+  }
+  .circle-item:nth-child(3) .circle-whow
+  {
+    height: 24vw !important;
+    width: 24vw !important;
+    background-color: #BD0E0E;
+  }
+  .circle-item:nth-child(4) .circle-whow
+  {
+    height: 30vw !important;
+    width: 30vw !important;
+    background-color: red;
+  }
+  .circles
+  {
+    justify-content: space-around;
   }
   @keyframes swimcircle {
     0%{

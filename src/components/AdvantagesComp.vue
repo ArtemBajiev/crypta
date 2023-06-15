@@ -18,8 +18,7 @@
                     <span class="swipe-item__number">{{ slide.id }} - </span>
                     <h3 class="swipe-item__header">{{ slide.header }}</h3>
                   </div>
-                  <p class="swipe-item__text">
-                    {{ slide.text }}
+                  <p class="swipe-item__text" v-html="slide.text">
                   </p>
                 </div></swiper-slide
               >
@@ -52,7 +51,7 @@ export default {
         {
           text: ` На бирже можно заработать большие деньги без ограничений, если сравнивать со
                 средними зарплатами в компаниях, где есть потолок, выше которого не заплатят даже за
-                качественную работу.`,
+                качественную работу. <div class="arrow-rotate"><div class="circle__arrow"></div></div>`,
           header: 'ДОХОД',
           id: 1,
         },
@@ -84,7 +83,7 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style >
 .advantages {
   display: flex;
   border-left: 6px solid white;
@@ -106,6 +105,16 @@ export default {
   width: 100%;
   align-items: center;
 
+}
+.arrow-rotate
+{
+width: 50px;
+height: 50px;
+margin: 0px auto;
+  background-size: contain;
+  transform: rotate(-90deg);
+  position: relative;
+  top: 0.5vw;
 }
 .advantages__wrapper
 {
@@ -225,14 +234,19 @@ margin-bottom: 20px;
     font-size: calc( (100vw - 1rem)/(80 - 70) * (1.5 - 1) + 1rem);
   line-height: calc( (100vw - 1rem)/(80 - 70) * (1.5 - 1) + 1rem);
 }
+.arrow-rotate
+{
 
+  transform: rotate(-90deg) scale(2);
+  top: 10vw;
+}
 .advantages__header
 {
   font-size: calc( (100vw - 1rem)/(80 - 60) * (1.5 - 1) + 1rem);
   max-width: 870px;
-  padding-bottom: 20px;
   padding-right: 20px;
   margin-left: 40px;
+  padding-bottom: 30px;
 }
 .advantages__text__right
 {

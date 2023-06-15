@@ -33,7 +33,7 @@
 <script>
 export default {};
 </script>
-<style>
+<style scoped>
 .result
 {
   padding-top: 60px;
@@ -114,6 +114,16 @@ padding: 1px 5px;
   .result__header
   {
     font-size: calc( (100vw - 1rem)/(80 - 70) * (1.5 - 1) + 1rem);
+  }
+  .red-shadow
+  {
+    top: 100px;
+    transform: scale(2);
+  }
+  .red-shadow-big
+  {
+    top:50%;
+    transform: scale(2);
   }
   .result-item
   {

@@ -2,7 +2,7 @@
  <section id="learn">
     <div class="container">
       <div class="learn__header__block">
-        <h2 class="learn__header">ЧЕМУ ВЫ НАУЧИТЕСЬ</h2>
+        <div class="learn__header"><h2>ЧЕМУ ВЫ НАУЧИТЕСЬ</h2></div>
       </div>
       <ul class="learn-list">
         <li class="learn-item push-right">Строить свою стратегию торговли</li>
@@ -37,7 +37,7 @@ export default {
   display: inline-block;
   border: 6px solid #ff0000;
   border-width: 6px 10px;
-  border-radius: 50px 4px 50px 4px;
+  border-radius: 80px 4px 80px 4px;
   padding: 5px 3px;
   margin-bottom: 52px;
   animation-name: anomBorder;
@@ -50,24 +50,20 @@ export default {
 }
 @keyframes anomBorder {
   0% {
-    border-radius: 50px 4px 50px 4px;
-    border-width: 6px 14px;
+    border-radius: 100px 4px 100px 4px;
   }
   25% {
     border-radius: 5px 5px 5px 5px;
-    border-width: 6px 6px;
   }
   50% {
-    border-radius: 4px 50px 4px 50px;
-    border-width: 6px 14px;
+    border-radius: 4px 100px 4px 100px;
   }
   75% {
     border-radius: 5px 5px 5px 5px;
-    border-width: 6px 6px;
   }
   100% {
-    border-radius: 50px 4px 50px 4px;
-    border-width: 6px 14px;
+    border-radius: 100px 4px 100px 4px;
+
   }
 }
 .learn-list {
@@ -84,14 +80,14 @@ export default {
 @media (min-width: 1000px) {
   .learn__header{
     margin-top: 260px;
-    font-size: 80px;
-    border-width:38px !important;
-    overflow: hidden;
+    font-size: 3vw;
+    border-width:25px 48px !important;
+  }
+  .learn__header h2{
+    transform: scale(1.05);
   }
   .learn-list {
-    display: block;
     margin: 0px auto;
-    width: 100%;
     max-width: 80vw;
     font-size: 64px;
     line-height: 64px;

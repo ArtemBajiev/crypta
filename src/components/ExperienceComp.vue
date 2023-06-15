@@ -101,6 +101,7 @@ position: relative;
 .experience__line-and-arrow
 {
     position: relative;
+    margin-bottom: 40px;
 }
 .experience__arrow
 {
@@ -145,9 +146,13 @@ position: relative;
   top: 154px;
 
 }
+.experience__line-and-arrow
+{
+  margin-bottom: 150px;
+}
 .experience__arrow
 {
-  transform: scale(2);
+  transform: scale(2.5);
 }
 }
 </style>

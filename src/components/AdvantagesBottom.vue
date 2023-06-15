@@ -3,6 +3,7 @@
     <section id="advantages-bottom">
      <div class="container">
          <h2 class="advantages-bottom__header">Преимущества</h2>
+         <div class="advantages-bottom__text-and-circle">
          <ul class="advantages-bottom__list">
              <li class="advantages-bottom__list-item">
               <strong>1</strong>  Записи с вами навсегда</li>
@@ -18,44 +19,18 @@
                   можно продолжить развитие в выбранном направлении. Мы вам в этом поможем</li>
          </ul>
          <div class="img-and-circle">
-             <div class="swipe-block"><swiper ref="mySwiper" :options="swiperOptions">
-           <swiper-slide>
-             <div class="swipe-img">
-                <img src="@/assets/img/disp2.jpg" alt="">
-             </div>
-             </swiper-slide>
-             <swiper-slide>
-             <div class="swipe-img">
-                <img src="@/assets/img/slide1Advant.jpg" alt="">
-             </div>
-             </swiper-slide>
-             <swiper-slide>
-             <div class="swipe-img">
-                <img src="@/assets/img/disp.jpg" alt="">
-             </div>
-             </swiper-slide>
-           <div class="swiper-pagination" slot="pagination"></div>
-         </swiper></div>
 <div class="advantages-bottom__circle-block">
          <div class="advantages-bottom__circle"></div>
+         </div>
          </div>
          </div>
      </div>
     </section>
  </template>
 <script>
-import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper';
-// style (Swiper v6+)
-import 'swiper/swiper-bundle.css';
 
 export default {
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
-  directives: {
-    swiper: directive,
-  },
+
   data() {
     return {
 
@@ -72,14 +47,16 @@ export default {
  }
  .advantages-bottom__list
  {
-     margin: 0px auto;
+     margin-left: auto;
      min-width: 300px;
      border-radius: 50%;
      line-height: 20px;
      margin-bottom: 16px;
      width: 50vw;
+     padding-left: 20px;
+     position: relative;
  }
- .advantages-bottom__list strong
+ .advantages-bottom__list-item strong
  {
      display: flex;
 
@@ -90,6 +67,14 @@ export default {
  box-shadow: -1px 1px 0px 2px red;
  text-align: center;
  padding-top: 2px;
+ position: absolute;
+ left: -4vw;
+ top: -3px;
+ }
+ .advantages-bottom__text-and-circle
+ {
+  display: flex;
+  align-items: center;
  }
  .img-and-circle
  {
@@ -112,12 +97,7 @@ export default {
      height: 40vw;
 
  }
- .swipe-block
- {
-     display: block;
-    width: 60vw;
-    height: 40vw;
- }
+
 .swipe-img img
 {
     width: 100%;
@@ -126,6 +106,9 @@ export default {
 .advantages-bottom__list-item
   {
     margin-bottom: 1vw;
+    position: relative;
+    padding-left: 10px;
+    margin-bottom: 2vw;
   }
  .advantages-bottom__circle-block{
     width: 50vw;
@@ -152,7 +135,6 @@ export default {
   {
     font-size: 3vw;
     line-height: 3vw;
-    margin-bottom: 1vw;
   }
   .advantages-bottom__list-item strong
   {
