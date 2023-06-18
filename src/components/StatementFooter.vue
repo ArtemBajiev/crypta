@@ -129,6 +129,12 @@ margin-left: auto;
     .statement__form__btn
     {
         padding: 2vw 5vw;
+        font-size: 2vw;
+    }
+    .statement__form__input
+    {
+        font-size: 3vw;
+        padding: .5vw;
     }
 }
 </style>

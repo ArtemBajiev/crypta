@@ -127,15 +127,15 @@ padding: 1px 5px;
   }
   .result-item
   {
-    font-size: calc( (100vw - 1rem)/(80 - 60) * (1.5 - 1) + 1rem);
-    line-height: calc( (100vw - 1rem)/(80 - 60) * (1.5 - 1) + 1rem);
+    font-size: 3.5vw;
+    line-height: 3.9vw;
     margin-bottom: 40px !important;
   }
   .result-item strong
   {
-    height: calc( (100vw - 1rem)/(80 - 60) * (1.5 - 1) + 1rem);
-    width: calc( (100vw - 1rem)/(80 - 60) * (1.5 - 1) + 1rem);
-   padding: 8px;
+    height: 3.5vw;
+    width: 3.5vw;
+   padding: .2vw;
   }
 }
 </style>

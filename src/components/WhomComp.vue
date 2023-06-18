@@ -19,6 +19,7 @@
       <div class="item">ВРЕМЯ ДЕЙСТВОВАТЬ</div>
       <div class="item marquee2">ВРЕМЯ ДЕЙСТВОВАТЬ</div>
       <div class="item">ВРЕМЯ ДЕЙСТВОВАТЬ</div>
+      <div class="item marquee2">ВРЕМЯ ДЕЙСТВОВАТЬ</div>
 
     </div>
     <div aria-hidden="true" class="items marquee">
@@ -30,6 +31,7 @@
       <div class="item marquee2">ВРЕМЯ ДЕЙСТВОВАТЬ</div>
       <div class="item">ВРЕМЯ ДЕЙСТВОВАТЬ</div>
       <div class="item marquee2">ВРЕМЯ ДЕЙСТВОВАТЬ</div>
+      <div class="item">ВРЕМЯ ДЕЙСТВОВАТЬ</div>
     </div>
   </div>
 
@@ -96,7 +98,8 @@
 export default {
   methods: {
     Parallax(event) {
-      if (window.matchMedia('(min-width: 768px)')) {
+      const mobileWidthMediaQuery = window.matchMedia('(min-width: 800px)');
+      if (mobileWidthMediaQuery.matches) {
         document.querySelectorAll('.circle-item').forEach((item) => {
           const position = item.getAttribute('value');
           const d = document.querySelector('.parallax-wrap');
@@ -552,15 +555,30 @@ align-items: center;
   }
   .circle-whow__header
   {
-    font-size: 2.1vw;
+    font-size: 2.4vw;
     max-width: none;
   }
   .circle-whow__text
   {
-    font-size: 1.3vw;
+    font-size: 1.7vw;
     max-width: 100%;
     padding: 0px 15%;
 
+  }
+  .circle-item:nth-child(1) .circle-whow__text
+  {
+    font-size: 2.3vw !important;
+    padding: 0 2.5vw;
+  }
+  .circle-item:nth-child(2) .circle-whow__text
+  {
+    font-size: 2vw !important;
+    padding: 0 2.5vw;
+  }
+  .circle-item:nth-child(4) .circle-whow__text
+  {
+    font-size: 2.2vw !important;
+    padding: 0 2.5vw;
   }
   .circles
   {
