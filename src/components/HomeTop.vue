@@ -1,8 +1,10 @@
 <template>
       <section id="home">
-    <div class="container">
+    <div class="container contain__hom">
       <div class="home">
-        <div class="home__text-and-img">
+      </div>
+      <div class="layer"></div>
+      <div class="home__text-and-img">
         <div class="header-text">
           <p class="header-text__left">ВРЕМЯ НАЧАТЬ <br />ПРЯМО</p>
           <p class="header-text__right">
@@ -12,7 +14,6 @@
         </div>
         <span class="img__now"></span>
         </div>
-      </div>
     </div>
   </section>
 </template>
@@ -22,6 +23,18 @@ export default {
 };
 </script>
 <style>
+#home
+{
+  perspective: 1000px;
+  overflow: hidden;
+}
+.contain__hom
+{
+  transform-style: preserve-3d;
+  will-change: transform;
+    transition: transform 2s cubic-bezier(0.050, 0.500, 0.000, 1.000);
+  transform: rotateX(var(--move-X)) rotateY(var(--move-Y));
+}
 .home {
   background-image: url("@/assets/img/human.jpg");
   background-size: 100%;
@@ -31,6 +44,28 @@ export default {
   background-repeat: no-repeat;
   background-attachment: fixed;
   position: relative;
+  transform: translateZ(0px);
+}
+.layer
+{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-image: url('../assets/img/sloy1.png');
+  background-size: 30%;
+  background-position: 45% 100%;
+  background-repeat: no-repeat;
+  inset: 0px;
+  background-attachment: fixed;
+  display: flex;
+  transform: translateZ(300px);
+
+}
+.home__text-and-img
+{
+  transform: translateZ(100px);
+  position: absolute;
+  top: 10vw;
 }
 
 .header-text {

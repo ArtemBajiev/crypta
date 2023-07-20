@@ -17,6 +17,14 @@ onMounted(() => {
     start: '50% 50%',
     scrub: true,
   });
+  document.addEventListener('mousemove', (e) => {
+    Object.assign(document.documentElement, {
+      style: `
+    --move-Y: ${(e.clientX - window.innerWidth / 2) * -0.002}deg;
+    --move-X: ${(e.clientY - window.innerHeight / 2) * -0.003}deg;
+    `,
+    });
+  });
 });
 </script>
 <style>
