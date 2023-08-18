@@ -23,11 +23,7 @@ export default {
 };
 </script>
 <style>
-#home
-{
-  perspective: 1000px;
-  overflow: hidden;
-}
+
 .contain__hom
 {
   transform-style: preserve-3d;
@@ -51,7 +47,6 @@ export default {
   position: absolute;
   width: 100%;
   height: 100vh;
-  background-image: url('../assets/img/sloy1.png');
   background-size: 30%;
   background-position: 45% 100%;
   background-repeat: no-repeat;
@@ -66,6 +61,10 @@ export default {
   transform: translateZ(100px);
   position: absolute;
   top: 10vw;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .header-text {
@@ -94,10 +93,20 @@ export default {
   width: 133px;
   margin: 0px auto;
 }
-@media (min-width: 500px) {
+@media (min-width: 800px) {
+  #home
+{
+  perspective: 1000px;
+  overflow: hidden;
+}
+.layer
+{
+
+  background-image: url('../assets/img/sloy1.png');
+}
   .home {
-  background-image: url("@/assets/img/humanPC.jpg");
-  background-size: 100%;
+  background-image: url("@/assets/img/humanPC.png");
+  background-size: 110%;
   background-position: top;
     min-height: 100vh;
 }
