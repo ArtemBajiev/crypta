@@ -106,7 +106,7 @@ export default {
 .img__now {
   display: block;
   background-image: url('');
-  background-size: contain
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   height: 54px;
