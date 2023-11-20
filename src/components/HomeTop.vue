@@ -1,6 +1,6 @@
 <template>
       <section id="home">
-    <div class="container contain__hom">
+    <div data-speed="1.7" class="container contain__hom">
       <div class="home">
       </div>
       <div class="layer"></div>

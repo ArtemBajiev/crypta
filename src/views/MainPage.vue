@@ -1,3 +1,4 @@
+<!-- eslint-disable import/extensions -->
 <!-- eslint-disable max-len -->
 <!-- eslint-disable vue/no-deprecated-slot-attribute -->
 <!-- eslint-disable max-len -->
@@ -15,8 +16,7 @@
   </template>
 <script setup>
 import { onMounted } from 'vue';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 import HomeTop from '@/components/HomeTop.vue';
 import AdvantagesComp from '@/components/AdvantagesComp.vue';
 import LearnComp from '@/components/LearnComp.vue';
@@ -26,6 +26,10 @@ import ExperienceComp from '@/components/ExperienceComp.vue';
 import ResultLearn from '@/components/ResultLearn.vue';
 import AdvantagesBottom from '@/components/AdvantagesBottom.vue';
 import StatementFooter from '@/components/StatementFooter.vue';
+// eslint-disable-next-line import/extensions
+import { ScrollTrigger } from '@/assets/gsap/ScrollTrigger.min.js';
+// eslint-disable-next-line import/extensions
+import { gsap } from '@/assets/gsap/gsap.min.js';
 
 onMounted(() => {
   gsap.registerPlugin(ScrollTrigger);

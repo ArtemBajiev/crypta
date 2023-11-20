@@ -1,15 +1,30 @@
 <template>
   <div class="global-container">
-   <router-view/>
+    <div class="contentSmooth">
+      <router-view/>
+    </div>
   </div>
 </template>
 <script setup>
 import { onMounted } from 'vue';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+// eslint-disable-next-line import/extensions
+import { ScrollTrigger } from '@/assets/gsap/ScrollTrigger.min.js';
+// eslint-disable-next-line import/extensions
+import { gsap } from '@/assets/gsap/gsap.min.js';
+// eslint-disable-next-line import/extensions
+import { ScrollSmoother } from '@/assets/gsap/ScrollSmoother.min.js';
 
 onMounted(() => {
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+  if (ScrollTrigger.isTouch !== 1) {
+    ScrollSmoother.create({
+      wraper: '.global-container',
+      content: '.contentSmooth',
+      smooth: 1.8,
+      effects: true,
+    });
+  }
   ScrollTrigger.create({
     trigger: '.header-text',
     animation: gsap.fromTo('.home', { opacity: 1 }, { opacity: 0 }),
