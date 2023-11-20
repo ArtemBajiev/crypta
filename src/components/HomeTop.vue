@@ -19,7 +19,27 @@
 </template>
 <script>
 export default {
-
+  methods: {
+    Parallax(event) {
+      const mobileWidthMediaQuery = window.matchMedia('(min-width: 800px)');
+      if (mobileWidthMediaQuery.matches) {
+        document.querySelectorAll('.circle-item').forEach((item) => {
+          const position = item.getAttribute('value');
+          const d = document.querySelector('.parallax-wrap');
+          const x = (window.innerWidth - event.pageX * position) / 90;
+          const y = (window.innerWidth - (event.pageY - d.offsetTop) * position) / 90;
+          // eslint-disable-next-line no-param-reassign
+          item.setAttribute('style', `transition: all 0.5s lineral; transform: translate(${x}px, ${y}px);`);
+        });
+      }
+    },
+    ParallaxStart() {
+      document.querySelectorAll('.circle-item').forEach((item) => {
+        // eslint-disable-next-line no-param-reassign
+        item.setAttribute('style', 'transition: all 2s ease-in-out; transform: translate(0px, 0px);');
+      });
+    },
+  },
 };
 </script>
 <style>
@@ -85,7 +105,7 @@ export default {
 }
 .img__now {
   display: block;
-  background-image: url("@/assets/img/Now.png");
+  background-image: url('');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
